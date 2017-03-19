@@ -15,7 +15,8 @@ class FakeActiveRecord
 
   def self.define_attribute_methods
     COLUMNS.each do |name|
-      define_method(name) { instance_variable_get("@#{name}")}
+      p instance_variable_get("@#{name}")
+      define_method(name) { instance_variable_get("@#{name}") }
     end
   end
 end

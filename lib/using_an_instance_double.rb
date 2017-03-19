@@ -1,5 +1,5 @@
-class User < Struct.new(:notifier)
-  # https://coderwall.com/p/rgdhmq/inheriting-from-struct
+# https://coderwall.com/p/rgdhmq/inheriting-from-struct
+class Customer < Struct.new(:notifier)
   def suspend!
     notifier.notify("suspended as")
   end

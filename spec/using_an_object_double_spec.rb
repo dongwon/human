@@ -1,33 +1,10 @@
-class User
-  def save; sleep 3; end
-end
-
-def save_user(user)
-  "saved!" if user.save
-end
-
-#p User.new.save
+require 'spec_helper'
+require 'using_an_object_double'
 
 describe '#save_user' do
   it 'renders message on success' do
     user = object_double(User.new, :save => true)
-    p user.save
     expect(save_user(user)).to eq("saved!")
-  end
-end
-
-#############################################################
-
-require 'logger'
-
-module MyApp
-  LOGGER = Logger.new("/tmp/myapp")
-end
-
-class Email
-  def self.send_to(recipient)
-    MyApp::LOGGER.info("Sent to #{recipient}")
-    # other emailing logic
   end
 end
 

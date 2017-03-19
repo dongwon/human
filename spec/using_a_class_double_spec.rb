@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'using_a_class_double'
 
 describe User, '#suspend!' do
   it 'notifies the console' do
